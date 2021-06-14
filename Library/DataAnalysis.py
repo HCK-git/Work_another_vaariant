@@ -38,6 +38,8 @@ def saving(url):
      Владимир Никитин и Матанов Кирилл."""
     k = 0
     progress = 0
+    if not os.path.exists(os.path.abspath('./Output')):
+        os.mkdir(os.path.abspath('./Output'))
     progressbar = [[sg.ProgressBar(len(url), orientation='h', size=(51, 10), key='progressbar')]]
     layout = [[sg.Frame('Прогресс', layout=progressbar)], [sg.Button('Старт')]]
     window = sg.Window('Скачивание архивов', layout)
